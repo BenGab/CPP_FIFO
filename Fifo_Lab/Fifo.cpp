@@ -36,6 +36,7 @@ void DeleteFifo(void)
 	}
 
 	free(buffer);
+	buffer = NULL;
 	in = NULL;
 	out = NULL;
 	currSize = 0;
