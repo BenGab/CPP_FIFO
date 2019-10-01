@@ -7,7 +7,6 @@
 #define BUFFER_FULL -3
 #define BUFFER_UNINITALIZED -4
 #define BUFFER_END 1
-#define NULL ((char *)0)
 
 int NewFifo(int);
 void DeleteFifo(void);

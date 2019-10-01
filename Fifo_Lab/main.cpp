@@ -26,6 +26,14 @@ int main()
 		return rc;
 	}
 
+	rc = Push('c');
+
+	if (rc < 0)
+	{
+		DeleteFifo();
+		return rc;
+	}
+
 	rc = Pop();
 
 	if (rc < 0)
