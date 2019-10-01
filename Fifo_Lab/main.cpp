@@ -1,7 +1,46 @@
 #include <stdio.h>
+#include "Fifo.h"
 
 int main()
 {
-	printf("HELLO");
-	return 0;
+	int rc = NewFifo(4);
+	if (rc < 0)
+	{
+		DeleteFifo();
+		return rc;
+	}
+
+	rc = Push('a');
+
+	if (rc < 0)
+	{
+		DeleteFifo();
+		return rc;
+	}
+
+	rc = Push('b');
+
+	if (rc < 0)
+	{
+		DeleteFifo();
+		return rc;
+	}
+
+	rc = Pop();
+
+	if (rc < 0)
+	{
+		DeleteFifo();
+		return rc;
+	}
+
+	rc = Pop();
+	if (rc < 0)
+	{
+		DeleteFifo();
+		return rc;
+	}
+
+	DeleteFifo();
+	return rc;
 }
