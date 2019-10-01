@@ -38,6 +38,8 @@ void DeleteFifo(void)
 	free(buffer);
 	in = NULL;
 	out = NULL;
+	currSize = 0;
+	readSize = 0;
 }
 
 int Push(char value)
