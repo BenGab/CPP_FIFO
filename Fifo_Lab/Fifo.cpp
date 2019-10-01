@@ -23,7 +23,7 @@ int NewFifo(int size)
 		return NOK;
 	}
 	
-	in = &buffer[0];
+	in = buffer;
 	bsize = size;
 	return OK;
 }
@@ -56,7 +56,7 @@ int Push(char value)
 
 	if (out == NULL)
 	{
-		out = &buffer[0];
+		out = buffer;
 	}
 
 	++in;
@@ -64,7 +64,7 @@ int Push(char value)
 
 	if (currSize >= bsize)
 	{
-		in = &buffer[0];
+		in = buffer;
 		currSize = 0;
 	}
 
@@ -90,7 +90,7 @@ int Pop(void)
 
 	if (readSize >= bsize)
 	{
-		out = &buffer[0];
+		out = buffer;
 		readSize = 0;
 	}
 
